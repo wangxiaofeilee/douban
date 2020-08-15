@@ -1,0 +1,1758 @@
+{
+	"info": {
+		"_postman_id": "762d42a5-e70f-4022-a2c4-e18223a5cb51",
+		"name": "storm接口测试",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "storm-001",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e197ae48-3fbc-4bbc-b95a-cfaccf2fc2f9",
+						"exec": [
+							"pm.test(\"Body is Correct\", function(){\r",
+							"    pm.response.to.have.body('{\"id\": \"1\", \"name\": \"\\\\u5c0f\\\\u660e\", \"age\": 18, \"code\": 200}');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{domain}}/getuser?userid=1",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"getuser"
+					],
+					"query": [
+						{
+							"key": "userid",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-002",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "74105c8d-24c8-4cd3-8625-d8c99ca3c960",
+						"exec": [
+							"pm.test(\"test response code\", function(){\r",
+							"    var jsonData =pm.response.json();\r",
+							"    pm.expect(jsonData.msg).to.equal(\"没有这个用户\");\r",
+							"});\r",
+							"   "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{domain}}/getuser?userid=2",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"getuser"
+					],
+					"query": [
+						{
+							"key": "userid",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "strom-003",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d993f322-4b7c-423d-9578-dc7fb5bc7a25",
+						"exec": [
+							"pm.test(\"test response code\", function(){\r",
+							"    var jsonData =pm.response.json();\r",
+							"    pm.expect(jsonData.msg).to.equal(\"没有这个用户\");\r",
+							"});\r",
+							"   "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{domain}}/getuser",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"getuser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-004",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f940b3e8-56e6-4a80-b270-fb63aeead625",
+						"exec": [
+							"pm.test(\"test response code\", function(){\r",
+							"    var jsonData =pm.response.json();\r",
+							"    pm.expect(jsonData.msg).to.equal(\"没有这个用户\");\r",
+							"});\r",
+							"   "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{domain}}/getuser?userid=-1",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"getuser"
+					],
+					"query": [
+						{
+							"key": "userid",
+							"value": "-1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "strom-005",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "05a11060-0c85-45fe-935a-12b8bfbe5341",
+						"exec": [
+							"pm.test(\"test response code\", function(){\r",
+							"    var jsonData =pm.response.json();\r",
+							"    pm.expect(jsonData.msg).to.equal(\"没有这个用户\");\r",
+							"});\r",
+							"   "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{domain}}/getuser?userid=admin",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"getuser"
+					],
+					"query": [
+						{
+							"key": "userid",
+							"value": "admin"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-006",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "18cf502a-29d7-4097-979e-1edaea182d15",
+						"exec": [
+							"pm.test(\"Body is Correct\", function(){\r",
+							"    pm.response.to.have.body('{\"id\": \"1\", \"name\": \"\\\\u5c0f\\\\u660e\", \"age\": 18, \"code\": 200}');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userid",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{domain}}/getuser",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"getuser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-007",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bb3c7cf5-698b-4c96-a7c6-5fa764402eee",
+						"exec": [
+							"pm.test(\"test response code\", function(){\r",
+							"    var jsonData =pm.response.json();\r",
+							"    pm.expect(jsonData.msg).to.equal(\"没有这个用户\");\r",
+							"});\r",
+							"   "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userid",
+							"value": "2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{domain}}/getuser",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"getuser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-008",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c8a76704-a1e0-4df6-a2bc-78731a06b544",
+						"exec": [
+							"pm.test(\"test response code\", function(){\r",
+							"    var jsonData =pm.response.json();\r",
+							"    pm.expect(jsonData.msg).to.equal(\"没有这个用户\");\r",
+							"});\r",
+							"   "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://{{domain}}/getuser",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"getuser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "strom-009",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "46409705-8b0b-46c3-9358-d42407ae326d",
+						"exec": [
+							"pm.test(\"test response code\", function(){\r",
+							"    var jsonData =pm.response.json();\r",
+							"    pm.expect(jsonData.msg).to.equal(\"没有这个用户\");\r",
+							"});\r",
+							"   "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userid",
+							"value": "-1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{domain}}/getuser",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"getuser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-010",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0c340f9f-e517-47d5-a3cb-8bf6b4992179",
+						"exec": [
+							"pm.test(\"test response code\", function(){\r",
+							"    var jsonData =pm.response.json();\r",
+							"    pm.expect(jsonData.msg).to.equal(\"没有这个用户\");\r",
+							"});\r",
+							"   "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userid",
+							"value": "admin",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{domain}}/getuser",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"getuser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-011",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d2925164-7c7b-4f9c-a9ed-215128040860",
+						"exec": [
+							"pm.test(\"test response code\", function(){\r",
+							"    var jsonData =pm.response.json();\r",
+							"    pm.expect(jsonData.msg).to.equal(\"没有这个用户\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userid",
+							"value": "1000",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{domain}}/getuser",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"getuser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "strom-012",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0cb27ce5-45e5-46d7-9dde-fdd2cf354c4e",
+						"exec": [
+							"pm.test(\"test response code\", function(){\r",
+							"    var jsonData =pm.response.json();\r",
+							"    pm.expect(jsonData.code).to.equal(200);\r",
+							"});\r",
+							"   "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://{{domain}}/getuser2?userid=1",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"getuser2"
+					],
+					"query": [
+						{
+							"key": "userid",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-013",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "789606df-12e2-42db-929b-d3bfd09b01cc",
+						"exec": [
+							"pm.test(\"test response code\", function(){\r",
+							"    var jsonData =pm.response.json();\r",
+							"    pm.expect(jsonData.msg).to.equal(\"请设置Content-Type为application/json\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{domain}}/getuser2?userid=1",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"getuser2"
+					],
+					"query": [
+						{
+							"key": "userid",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-014",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8aff7ec3-46b5-41f9-bb3d-abd9c4bc2293",
+						"exec": [
+							"pm.test(\"test response code\", function(){\r",
+							"    var jsonData =pm.response.json();\r",
+							"    pm.expect(jsonData.msg).to.equal(\"请设置Content-Type为application/json\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json123",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://{{domain}}/getuser2?userid=1",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"getuser2"
+					],
+					"query": [
+						{
+							"key": "userid",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "strom-015",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "10a816c7-9e2b-4941-9cf3-692aac05dfd3",
+						"exec": [
+							"pm.test(\"test response code\", function(){\r",
+							"    var jsonData =pm.response.json();\r",
+							"    pm.expect(jsonData.msg).to.equal(\"没有这个用户\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://{{domain}}/getuser2",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"getuser2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "strom-016",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "78ed940c-b736-48b4-bc07-78990b06903c",
+						"exec": [
+							"pm.test(\"test response code\", function(){\r",
+							"    var jsonData =pm.response.json();\r",
+							"    pm.expect(jsonData.msg).to.equal(\"没有这个用户\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://{{domain}}/getuser2?userid=2",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"getuser2"
+					],
+					"query": [
+						{
+							"key": "userid",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "strom-017",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "338beecd-542c-4173-8a79-8d14f14e6dbf",
+						"exec": [
+							"pm.test(\"test response code\", function(){\r",
+							"    var jsonData =pm.response.json();\r",
+							"    pm.expect(jsonData.code).to.equal(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userid\":1\r\n}"
+				},
+				"url": {
+					"raw": "http://{{domain}}/getmoney",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"getmoney"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-018",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c4613268-3dc9-4a37-918f-461cf245847f",
+						"exec": [
+							"pm.test(\"test response code\", function(){\r",
+							"    var jsonData =pm.response.json();\r",
+							"    pm.expect(jsonData.msg).to.equal(\"参数错误\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userid",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{domain}}/getmoney",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"getmoney"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-019",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "72b677b6-c4a0-440c-b530-bd8d9b226db9",
+						"exec": [
+							"pm.test(\"test response code\", function(){\r",
+							"    var jsonData =pm.response.json();\r",
+							"    pm.expect(jsonData.msg).to.equal(\"没有这个用户\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userid\":2\r\n}"
+				},
+				"url": {
+					"raw": "http://{{domain}}/getmoney",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"getmoney"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "strom-020",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ec4cc599-5bda-4a92-a769-04a2d35b4aea",
+						"exec": [
+							"pm.test(\"test response code\", function(){\r",
+							"    var jsonData =pm.response.json();\r",
+							"    pm.expect(jsonData.msg).to.equal(\"参数错误\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://{{domain}}/getmoney",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"getmoney"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "strom-021",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ec81c749-5d8b-478d-81a5-eec3be298eb2",
+						"exec": [
+							"pm.test(\"test response code\", function(){\r",
+							"    var jsonData =pm.response.json();\r",
+							"    pm.expect(jsonData.msg).to.equal(\"没有这个用户\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userid\": \"admin\"\r\n}"
+				},
+				"url": {
+					"raw": "http://{{domain}}/getmoney",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"getmoney"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-22",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f3ba9fc1-22f6-49d8-b9ef-87fb8bd008d6",
+						"exec": [
+							"pm.test(\"status code is 405\", function() {\r",
+							"    pm.response.to.have.status(405)\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{domain}}/getmoney?userid=1",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"getmoney"
+					],
+					"query": [
+						{
+							"key": "userid",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-023",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0a06534b-0d47-4df1-a39d-fa598cb0ca13",
+						"exec": [
+							"pm.test(\"test response code\", function(){\r",
+							"    var jsonData =pm.response.json();\r",
+							"    pm.expect(jsonData.code).to.equal(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userid",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "money",
+							"value": "200",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{domain}}/setmoney",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"setmoney"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-024",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "aef4851b-17f2-447e-9f58-6027d83822ba",
+						"exec": [
+							"pm.test(\"test response code\", function(){\r",
+							"    var jsonData =pm.response.json();\r",
+							"    pm.expect(jsonData.msg).to.equal(\"需要认证\")\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userid",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "money",
+							"value": "200",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{domain}}/setmoney",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"setmoney"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-025",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "487d8f8c-4b19-4c61-9da5-81a1436c70e6",
+						"exec": [
+							"pm.test(\"test response code\", function(){\r",
+							"    var jsonData =pm.response.json();\r",
+							"    pm.expect(jsonData.msg).to.equal(\"认证失败\")\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1234565",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userid",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "money",
+							"value": "200",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{domain}}/setmoney",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"setmoney"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-026",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4059d667-5987-44fc-9f8c-0755c9c1376e",
+						"exec": [
+							"pm.test(\"test response code\", function(){\r",
+							"    var jsonData =pm.response.json();\r",
+							"    pm.expect(jsonData.msg).to.equal(\"没有这个用户\")\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userid",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "money",
+							"value": "200",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{domain}}/setmoney",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"setmoney"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-027",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ffada786-002c-4132-bd99-51d8caeaad7e",
+						"exec": [
+							"pm.test(\"test response code\", function(){\r",
+							"    var jsonData =pm.response.json();\r",
+							"    pm.expect(jsonData.code).to.equal(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userid",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "money",
+							"value": "900.9",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{domain}}/setmoney",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"setmoney"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-028",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b68c2cbf-0114-40d3-a555-615538fe4378",
+						"exec": [
+							"pm.test(\"status code is 405\", function() {\r",
+							"    pm.response.to.have.status(405)\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userid",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "money",
+							"value": "900",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{domain}}/setmoney",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"setmoney"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-029",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0a1aee13-aef1-445a-9dc3-7b1d519d53ff",
+						"exec": [
+							"pm.test(\"test response code\", function(){\r",
+							"    var jsonData =pm.response.json();\r",
+							"    pm.expect(jsonData.code).to.equal(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token=token12345",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userid",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "money",
+							"value": "900",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{domain}}/setmoney2",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"setmoney2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-030",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "cf8a4231-2990-4c75-a99f-12a04440c78a",
+						"exec": [
+							"pm.test(\"test response code\", function(){\r",
+							"    var jsonData =pm.response.json();\r",
+							"    pm.expect(jsonData.msg).to.equal(\"cookie认证失败\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userid",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "money",
+							"value": "900",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{domain}}/setmoney2",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"setmoney2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-031",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fef9a8bb-0fb0-4807-bfdc-a73930542da0",
+						"exec": [
+							"pm.test(\"test response code\", function(){\r",
+							"    var jsonData =pm.response.json();\r",
+							"    pm.expect(jsonData.msg).to.equal(\"cookie非法\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token=token1111",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userid",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "money",
+							"value": "900",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{domain}}/setmoney2",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"setmoney2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-032",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "78b7b05a-7688-465c-b31b-a4f6799cdfb0",
+						"exec": [
+							"pm.test(\"test response code\", function(){\r",
+							"    var jsonData =pm.response.json();\r",
+							"    pm.expect(jsonData.msg).to.equal(\"没有这个用户\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token=token12345",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userid",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "money",
+							"value": "900",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{domain}}/setmoney2",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"setmoney2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-033",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "106d17ad-e04a-44a1-838e-044fd620c2e8",
+						"exec": [
+							"pm.test(\"test response code\", function(){\r",
+							"    var jsonData =pm.response.json();\r",
+							"    pm.expect(jsonData.code).to.equal(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token=token12345",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userid",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "money",
+							"value": "900.9",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{domain}}/setmoney2",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"setmoney2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-034",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f4415087-ace9-44e4-8125-106fb1ac8cd2",
+						"exec": [
+							"pm.test(\"status code is 405\", function() {\r",
+							"    pm.response.to.have.status(405)\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token=token12345",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userid",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "money",
+							"value": "900",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{domain}}/setmoney2",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"setmoney2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-035",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5feb22f8-bb4e-48ab-91f7-8b2bdca25d35",
+						"exec": [
+							"pm.test(\"test response code\", function(){\r",
+							"    var jsonData =pm.response.json();\r",
+							"    pm.expect(jsonData.code).to.equal(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/wx/Desktop/1.txt"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{domain}}/uploadfile",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"uploadfile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-036",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f7d2ed48-d218-4ffa-8aa7-73f7fbdff801",
+						"exec": [
+							"pm.test(\"test response code\", function(){\r",
+							"    var jsonData =pm.response.json();\r",
+							"    pm.expect(jsonData.code).to.equal(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "",
+							"type": "file",
+							"src": "/C:/Users/wx/Desktop/1.docx"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{domain}}/uploadfile",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"uploadfile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-037",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "cf46e843-1ed8-4bf4-9752-ccba1d823be6",
+						"exec": [
+							"pm.test(\"test response code\", function(){\r",
+							"    var jsonData =pm.response.json();\r",
+							"    pm.expect(jsonData.code).to.equal(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/wx/Desktop/1.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{domain}}/uploadfile",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"uploadfile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-38",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "06c00032-0b2e-4c83-9304-830990a50c9b",
+						"exec": [
+							"pm.test(\"test response code\", function(){\r",
+							"    var jsonData =pm.response.json();\r",
+							"    pm.expect(jsonData.code).to.equal(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/wx/Desktop/中文.txt"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{domain}}/uploadfile",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"uploadfile"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
